@@ -6,7 +6,7 @@ Ce projet démontre l'implémentation de l'injection de dépendances en Java à 
 ## Diagramme de Classe
 Le diagramme de classe ci-dessous représente la structure de l'application. Il montre comment les différentes classes interagissent et comment les dépendances sont gérées via des interfaces.
 
-![Diagramme de classe](https://github.com/FatihaELHABTI/demo_ic/tree/main/demo_ioc/src/main/resources/imgs)
+![Diagramme de classe](https://github.com/FatihaELHABTI/demo_ic/tree/main/demo_ioc/src/main/resources/imgs/diagramme.PNG)
 
 ## Concepts Clés
 
@@ -47,6 +47,4 @@ Cette approche permet de modifier les implémentations sans toucher au code sour
 La prochaine étape sera d'intégrer Spring pour gérer l'injection de dépendances via XML et annotations.
 
 ---
-
-Ce projet met en pratique les principes fondamentaux du développement modulaire et prépare à une migration vers des frameworks plus avancés comme Spring.
 
