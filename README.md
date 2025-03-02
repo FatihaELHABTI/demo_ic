@@ -6,7 +6,7 @@ Ce projet démontre l'implémentation de l'injection de dépendances en Java à 
 ## Diagramme de Classe
 Le diagramme de classe ci-dessous représente la structure de l'application. Il montre comment les différentes classes interagissent et comment les dépendances sont gérées via des interfaces.
 
-![Diagramme de classe](https://github.com/FatihaELHABTI/demo_ic/tree/main/demo_ioc/src/main/resources/imgs/diagramme.PNG)
+![Diagramme de classe](https://github.com/FatihaELHABTI/demo_ic/blob/main/demo_ioc/src/main/resources/imgs/diagramme.PNG)
 
 ## Concepts Clés
 
