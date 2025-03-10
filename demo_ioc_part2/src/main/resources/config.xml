@@ -3,8 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="d" class="dao.DaoImpl"/>
+    <bean id="d" class="ext.DaoImplV2"/>
     <bean id="metier" class="metier.MetierImpl">
         <property name="dao" ref="d"/>
+        <!-- Injection avec constructeur <constructor-arg ref="d"/> -->
     </bean>
 </beans>

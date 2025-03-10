@@ -1,17 +1,28 @@
 package metier;
 
 import dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("metier")
 public class MetierImpl implements IMetier{
 
+    //@Autowired  --> not recommended
+    /*
+    ** Avec la programmation dynamique, spring peut acceder au variable qui est normalement private et le modifier
+    * alors c'est comme une vilation du principe d'encapsulation.
+     */
     private IDao dao;
 
-    public MetierImpl(IDao dao) {
+    //injection avec consructeur
+    //neccessite avoir un seul constructeur
+    public MetierImpl(@Qualifier("dao") IDao dao) {
         this.dao = dao;
     }
-
-    public MetierImpl() {
-    }
+// il ne faut pas avoir un constructeur sans parametres avec injection par constructeur
+//    public MetierImpl() {
+//    }
 
     @Override
     public double calcul() {
