@@ -43,8 +43,49 @@ IDao dao = (IDao) cDao.getConstructor().newInstance();
 
 Cette approche permet de modifier les implémentations sans toucher au code source.
 
-## Prochaine Étape : Intégration de Spring
-La prochaine étape sera d'intégrer Spring pour gérer l'injection de dépendances via XML et annotations.
+### 3. Injection avec Spring (XML et Annotations)
+Avec Spring, on peut gérer l'injection des dépendances de manière déclarative via XML ou annotations.
 
----
+#### a) Injection via XML
+
+```xml
+<bean id="d" class="ext.DaoImplV2"/>
+<bean id="metier" class="metier.MetierImpl">
+    <property name="dao" ref="d"/>
+    <!-- Injection avec constructeur <constructor-arg ref="d"/> -->
+</bean>
+```
+
+#### b) Injection via Annotations
+
+```java
+@Service("metier")
+public class MetierImpl implements IMetier{
+    private IDao dao;
+
+    
+    public MetierImpl(@Qualifier("dao") IDao dao) {
+        this.dao = dao;
+    }
+}
+```
+
+L'utilisation d' `@Qualifier` permet à Spring d'injecter automatiquement les dépendances nécessaires.
+
+### Exécution avec Spring
+
+#### Via XML
+```java
+ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+IMetier metier = context.getBean(IMetier.class);
+System.out.println("Res : " + metier.calcul());
+```
+
+#### Via Annotations
+```java
+ApplicationContext context = new AnnotationConfigApplicationContext("dao","metier","ext");
+IMetier metier = context.getBean(IMetier.class);
+System.out.println("Res Ver Annotation : " + metier.calcul());
+```
+
 
